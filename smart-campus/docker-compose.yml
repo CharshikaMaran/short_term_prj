@@ -1,0 +1,24 @@
+services:
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+
+  backend:
+    build: ./backend
+    container_name: smart-campus-backend
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/smart_campus
+    depends_on:
+      - mongodb
+
+  frontend:
+    build: ./frontend
+    container_name: smart-campus-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
