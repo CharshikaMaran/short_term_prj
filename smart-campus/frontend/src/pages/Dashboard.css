@@ -1,5 +1,13 @@
 /* ===== DASHBOARD.CSS ===== */
 
+/* Page background */
+.dashboard-stats,
+.section-body,
+.section-header,
+.empty-state {
+    background: #e15138;
+}
+
 /* Stats grid */
 .dashboard-stats {
     display: grid;
@@ -13,8 +21,8 @@
     align-items: center;
     gap: 16px;
     padding: 20px;
-    background: linear-gradient(135deg, #fff7fb 0%, #fff0f4 100%);
-    border: 1px solid #f7c7d3;
+    background: linear-gradient(135deg, #877980 0%, #fff0f4 100%);
+    border: 1px solid #e33762;
     border-radius: 16px;
     box-shadow: 0 8px 24px rgba(190, 24, 93, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -68,7 +76,7 @@
     justify-content: space-between;
     padding: 18px 22px 14px;
     border-bottom: 1px solid #f5c2cf;
-    background: #fffafc;
+    background: #fff5f9;
     flex-wrap: wrap;
     gap: 8px;
 }
