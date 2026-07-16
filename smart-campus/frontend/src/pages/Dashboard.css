@@ -1,13 +1,5 @@
 /* ===== DASHBOARD.CSS ===== */
 
-/* Page background */
-.dashboard-stats,
-.section-body,
-.section-header,
-.empty-state {
-    background: #e15138;
-}
-
 /* Stats grid */
 .dashboard-stats {
     display: grid;
@@ -21,17 +13,9 @@
     align-items: center;
     gap: 16px;
     padding: 20px;
-    background: linear-gradient(135deg, #877980 0%, #fff0f4 100%);
-    border: 1px solid #e33762;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(190, 24, 93, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
-
-.stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 28px rgba(190, 24, 93, 0.12);
-}
+.stat-card:hover { transform: translateY(-3px); }
 
 .stat-icon {
     width: 44px;
@@ -42,8 +26,6 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    background: #ffe4ec;
-    color: #dc2626;
 }
 
 .stat-info { flex: 1; min-width: 0; }
@@ -52,8 +34,8 @@
     font-size: 26px;
     font-weight: 700;
     line-height: 1;
-    color: #831843;
-    -webkit-text-fill-color: #831843;
+    color: var(--text-main);
+    -webkit-text-fill-color: var(--text-main);
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
@@ -61,8 +43,8 @@
 
 .stat-label {
     font-size: 13px;
-    color: #be185d;
-    -webkit-text-fill-color: #be185d;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
     margin-top: 4px;
     white-space: nowrap;
     overflow: hidden;
@@ -75,8 +57,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 18px 22px 14px;
-    border-bottom: 1px solid #f5c2cf;
-    background: #fff5f9;
+    border-bottom: 1px solid var(--glass-border);
     flex-wrap: wrap;
     gap: 8px;
 }
@@ -84,34 +65,29 @@
 .section-header h3 {
     margin: 0;
     font-size: 1rem;
-    color: #9f1239;
 }
 
 .section-header p {
     margin: 2px 0 0;
     font-size: 12px;
-    color: #be185d;
-    -webkit-text-fill-color: #be185d;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
 }
 
-.section-body {
-    padding: 16px 22px;
-    background: #fffafc;
-}
+.section-body { padding: 16px 22px; }
 
 /* Tracker / list items */
 .tracker-item {
     padding: 14px 18px;
-    background: #fffefc;
-    border: 1px solid #f7c7d3;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
     border-radius: 10px;
     margin-bottom: 10px;
-    box-shadow: 0 2px 8px rgba(190, 24, 93, 0.05);
 }
 
 .tracker-item:last-child { margin-bottom: 0; }
 
-/* Status badges */
+/* Status badges — ensure text-fill-color matches */
 .status-badge {
     display: inline-flex;
     align-items: center;
@@ -123,25 +99,10 @@
     white-space: nowrap;
     flex-shrink: 0;
 }
-
-.status-badge.selected {
-    background: rgba(16, 185, 129, 0.12);
-    color: #059669;
-    -webkit-text-fill-color: #059669;
-}
-
-.status-badge.rejected {
-    background: rgba(239, 68, 68, 0.12);
-    color: #dc2626;
-    -webkit-text-fill-color: #dc2626;
-}
-
+.status-badge.selected    { background: rgba(16,185,129,0.15); color: #34d399; -webkit-text-fill-color: #34d399; }
+.status-badge.rejected    { background: rgba(239,68,68,0.15);  color: #f87171; -webkit-text-fill-color: #f87171; }
 .status-badge.applied,
-.status-badge.in-progress {
-    background: rgba(245, 158, 11, 0.14);
-    color: #d97706;
-    -webkit-text-fill-color: #d97706;
-}
+.status-badge.in-progress { background: rgba(245,158,11,0.15); color: #fbbf24; -webkit-text-fill-color: #fbbf24; }
 
 /* Round pill */
 .round-pill {
@@ -152,19 +113,15 @@
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
-    background: #ffe4ec;
-    color: #9f1239;
-    border: 1px solid #f7c7d3;
 }
 
 /* Empty state */
 .empty-state {
     text-align: center;
     padding: 40px 20px;
-    color: #be185d;
-    -webkit-text-fill-color: #be185d;
+    color: var(--text-muted);
+    -webkit-text-fill-color: var(--text-muted);
 }
-
 .empty-state-icon { font-size: 36px; margin-bottom: 12px; }
 .empty-state p { margin: 0; font-size: 14px; }
 .empty-state span { font-size: 13px; }
